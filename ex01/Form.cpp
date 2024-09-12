@@ -10,6 +10,10 @@ void	Form::beSigned(const Bureaucrat& bc)
 
 Form::Form(const std::string &name, int signGrade, int execGrade) : name(name), signGrade(signGrade), execGrade(execGrade), approved(false)
 {
+	if (getExecGrade() > 150 || getExecGrade() > 150)
+		throw (GradeTooLowException());
+	if (getExecGrade() <= 0 || getExecGrade() <= 0)
+		throw (GradeTooHighException());
 }
 
 const std::string& Form::getName() const
